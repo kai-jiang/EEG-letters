@@ -1,4 +1,7 @@
+
 # Build and Run a Docker Container for your Machine Learning Model
+
+## Cloned from https://github.com/xaviervasques/EEG-letters used for demo purposes
 
 The idea is to do a quick and easy build of a Docker container with a simple machine learning model and run it. In order to start building a Docker container for a machine learning model, let’s consider three files: 
 -	Dockerfile
