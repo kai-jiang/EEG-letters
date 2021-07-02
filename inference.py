@@ -25,6 +25,9 @@ def inference():
     MODEL_FILE_NN = os.environ["MODEL_FILE_NN"]
     MODEL_PATH_LDA = os.path.join(MODEL_DIR, MODEL_FILE_LDA)
     MODEL_PATH_NN = os.path.join(MODEL_DIR, MODEL_FILE_NN)
+
+    OUTPUT_DIR = os.environ["OUTPUT_DIR"]
+    output_path = os.path.join(OUTPUT_DIR,'output.csv')
         
     # Load, read and normalize training data
     testing = "test.csv"
@@ -54,7 +57,9 @@ def inference():
     print("NN score and classification:")
     print(clf_nn.score(X_test, y_test))
     print(clf_nn.predict(X_test))
-    
+
+    print("Writing to ", output_path)
+    pd.DataFrame(X_test).to_csv(output_path)
     
 if __name__ == '__main__':
     inference()
